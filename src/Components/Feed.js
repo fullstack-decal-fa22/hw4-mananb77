@@ -9,18 +9,19 @@ const Feed = () => {
     // Refer to Hint 2 for more help!
 
     /* Use the map() function to render multiple Blocks! */
-    const [posts, addPost] = useState([]); // TODO: edit this variable
+    // const = [variabletoUpdate, functionToUpdateVariable] = useState(initialValue);
+    const [posts, updateState] = useState([]); // TODO: edit this variable
 
     return (
         <div>
             {/* when clicking post "color" block, then add to feed */}
-            {/* <Menu posts={posts} addPost={addPost}/> */}
-            <Menu></Menu>
+            <Menu posts={posts} updateState={updateState}/>
+            {/* <Menu></Menu> */}
             {/* Below is where all of your Blocks should render! */}
-            {/* {posts.map((el) => {
-                <Block color={el}/>
-            })} */}
-            {posts}
+            {posts.map((backgroundColor) => {
+                <Block color={backgroundColor}/>
+            })}
+            {/* {posts} */}
         </div>
     );
 }

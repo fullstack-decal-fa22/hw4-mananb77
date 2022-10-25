@@ -5,16 +5,16 @@ import Feed from './Feed.js';
 import { useState } from 'react';
 /* Add any imports you think you might need here! */
 
-const Menu = () => { 
-    const [state, updateState] = useState(Feed);
+const Menu = (posts, updateState) => { 
+    // const [state, updateState] = useState(Feed);
     // handleClick={(color) => updateFeed}
     
     return (
       <div className="colorOptions">
-          <Color color="red" handleClick={(color) => updateState(['red', ...state])}></Color>
-          <Color color="pink" handleClick={(color) => updateState(['pink', ...state])}></Color>
-          <Color color="blue" handleClick={(color) => updateState(['blue', ...state])}></Color>
-          <Color color="green" handleClick={(color) => updateState(['green', ...state])}></Color>
+          <Color color="red" handleClick={(color) => updateState(posts => [color, ...posts])}></Color>
+          <Color color="pink" handleClick={(color) => updateState(['pink', ...posts])}></Color>
+          <Color color="blue" handleClick={(color) => updateState(['blue', ...posts])}></Color>
+          <Color color="green" handleClick={(color) => updateState(['green', ...posts])}></Color>
       </div>
     );
 }
